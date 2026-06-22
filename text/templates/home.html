@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Генератор</title>
+</head>
+<body>
+    <h1>Генератор картинок на Flask</h1>
+
+    <form method="POST">
+        <label for="prompt">Что нарисовать?</label><br>
+        <input type="text" id="prompt" name="prompt" required placeholder="Например: Кот в космосе" value="{{ prompt }}">
+        <button type="submit">Создать шедевр</button>
+    </form>
+
+    <hr>
+
+    {% if image_url %}
+        <h2>Ваш результат:</h2>
+        <p><strong>Запрос:</strong> {{ prompt }}</p>
+        <img src="{{ image_url }}" alt="Сгенерированное изображение">
+    {% endif %}
+
+</body>
+</html>
